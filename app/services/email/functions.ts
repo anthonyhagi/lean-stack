@@ -1,5 +1,9 @@
 import { env } from '../app';
-import { EmailServiceProvider, SendEmailParams } from './providers';
+import {
+  AWSSESProvider,
+  EmailServiceProvider,
+  SendEmailParams,
+} from './providers';
 import { ResendProvider } from './providers/resend';
 import { SMTPProvider } from './providers/smtp';
 
@@ -13,6 +17,9 @@ function getEmailProvider(): EmailServiceProvider {
   const driver = env.MAIL_DRIVER;
 
   switch (driver) {
+    case 'aws-ses':
+      return new AWSSESProvider();
+
     case 'resend':
       return new ResendProvider(env.MAIL_RESEND_API_KEY);
 

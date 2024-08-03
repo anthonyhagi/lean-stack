@@ -2,6 +2,12 @@ import { z } from 'zod';
 
 const emailSchema = z.discriminatedUnion('MAIL_DRIVER', [
   z.object({
+    MAIL_DRIVER: z.literal('aws-ses'),
+    AWS_ACCESS_KEY_ID: z.string(),
+    AWS_SECRET_ACCESS_KEY: z.string(),
+  }),
+
+  z.object({
     MAIL_DRIVER: z.literal('resend'),
     MAIL_RESEND_API_KEY: z.string(),
   }),

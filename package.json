@@ -14,6 +14,7 @@
     "prettier:format": "prettier -w ."
   },
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.623.0",
     "@libsql/client": "^0.8.1",
     "@radix-ui/react-slot": "^1.1.0",
     "@remix-run/node": "^2.11.0",
