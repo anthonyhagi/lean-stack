@@ -1,6 +1,11 @@
 import { z } from 'zod';
 
 const emailSchema = z.discriminatedUnion('MAIL_DRIVER', [
+  z.object({
+    MAIL_DRIVER: z.literal('resend'),
+    MAIL_RESEND_API_KEY: z.string(),
+  }),
+
   // The SMTP driver allows us to run against a local mail catcher,
   // hence allowing us to send as many emails as we'd like locally.
   // This uses `nodemailer` internally.
