@@ -27,7 +27,7 @@ export function Heading(props: HeadingProps) {
   }
 
   return (
-    <Element className={cn(headingStyles[Element])} {...rest}>
+    <Element className={cn(headingStyles[Element], className)} {...rest}>
       {children}
     </Element>
   );
