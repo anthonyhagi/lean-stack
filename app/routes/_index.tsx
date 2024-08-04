@@ -1,5 +1,8 @@
 import type { MetaFunction } from '@remix-run/node';
 
+import { Heading } from '~/components/ui/heading';
+import { Text } from '~/components/ui/text';
+
 export const meta: MetaFunction = () => {
   return [
     { title: 'New Remix App' },
@@ -9,37 +12,20 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="p-4 font-sans">
-      <h1 className="text-3xl">Welcome to Remix</h1>
-      <ul className="mt-4 list-disc space-y-2 pl-6">
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/quickstart"
-            rel="noreferrer">
-            5m Quick Start
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/tutorial"
-            rel="noreferrer">
-            30m Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/docs"
-            rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
+    <main className="flex min-h-dvh flex-col items-center justify-between dark:bg-zinc-950">
+      <header></header>
+
+      <div className="mx-auto max-w-7xl">
+        <div className="py-8 text-center">
+          <Heading as="h1">Welcome to the lean stack</Heading>
+
+          <Text variant="large" className="mt-2 dark:text-zinc-500">
+            Let's get your app up and running
+          </Text>
+        </div>
+      </div>
+
+      <footer></footer>
+    </main>
   );
 }
