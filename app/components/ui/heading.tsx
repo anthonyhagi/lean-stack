@@ -20,7 +20,9 @@ interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
 export function Heading(props: HeadingProps) {
   const { className, children, as: Element = 'h1', ...rest } = props;
 
-  if (!['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(Element)) {
+  // By default, h1-h4 is supported. Add 'h5' and/or 'h6' above if you
+  // need those elements.
+  if (!Object.keys(headingStyles).includes(Element)) {
     throw new Error(
       'Please specify a valid html heading element (e.g. h1, h2, h3, etc.)'
     );
