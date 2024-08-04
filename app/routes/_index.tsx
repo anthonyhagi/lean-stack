@@ -20,7 +20,7 @@ export default function Index() {
           <Heading as="h1">Welcome to the lean stack</Heading>
 
           <Text variant="large" className="mt-2 dark:text-zinc-500">
-            Let's get your app up and running
+            Let&apos;s get your app up and running
           </Text>
         </div>
       </div>
