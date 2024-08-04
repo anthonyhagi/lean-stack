@@ -1,5 +1,5 @@
 import { eq, and, gt } from 'drizzle-orm';
-import { sessions, users } from '~/schema';
+import { integrations, sessions, userIntegrations, users } from '~/schema';
 
 import { db } from '../db';
 
@@ -37,3 +37,46 @@ export async function getSession(params: GetSessionParams) {
 export type SessionWithUser = NonNullable<
   Awaited<ReturnType<typeof getSession>>
 >;
+
+type ExistingConnectionParams = {
+  providerId: string;
+};
+
+/**
+ * Handle getting the social auth connection for a user based on
+ * their providerId.
+ *
+ * @param params the providers' id that we will search for.
+ *
+ * @returns `null` if the connection doesn't exist, otherwise
+ * we return the connection.
+ */
+export async function getExistingConnection(params: ExistingConnectionParams) {
+  const { providerId } = params;
+
+  const rows = await db
+    .select()
+    .from(userIntegrations)
+    .where(eq(userIntegrations.providerId, providerId))
+    .leftJoin(
+      integrations,
+      eq(userIntegrations.integrationId, integrations.id)
+    );
+
+  if (rows.length === 0) {
+    return null;
+  }
+
+  const data = rows[0];
+
+  if (!data.integration || !data.user_integration) {
+    return null;
+  }
+
+  return {
+    ...data.integration,
+    userIntegration: {
+      ...data.user_integration,
+    },
+  };
+}

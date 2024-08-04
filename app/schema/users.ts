@@ -9,6 +9,7 @@ import { v4 as uuid } from 'uuid';
 
 import { roles } from './roles';
 import { sessions } from './sessions';
+import { userIntegrations } from './user-integrations';
 
 export const users = sqliteTable(
   'user',
@@ -40,4 +41,5 @@ export type User = typeof users.$inferSelect;
 export const userRelations = relations(users, ({ many, one }) => ({
   sessions: many(sessions),
   role: one(roles),
+  userIntegrations: many(userIntegrations),
 }));
