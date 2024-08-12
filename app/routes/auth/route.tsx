@@ -20,7 +20,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 export default function Page() {
   return (
-    <div className="flex min-h-dvh flex-col justify-center">
+    <div className="flex min-h-dvh flex-col items-center justify-center">
       <Outlet />
     </div>
   );

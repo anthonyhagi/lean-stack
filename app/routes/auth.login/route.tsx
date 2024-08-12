@@ -1,4 +1,3 @@
-import { LoaderFunctionArgs } from '@remix-run/node';
 import { Form, Link, useLoaderData } from '@remix-run/react';
 import { Button } from '~/components/ui/button';
 import {
@@ -10,7 +9,6 @@ import {
   CardTitle,
 } from '~/components/ui/card';
 import { Label } from '~/components/ui/label';
-import { requireNotLoggedIn } from '~/services/auth';
 import { cn } from '~/utils/css';
 import { useForm } from '@conform-to/react';
 import { parseWithZod } from '@conform-to/zod';
@@ -21,9 +19,7 @@ import { env } from '~/services/app';
 import { GoogleLogo } from '~/components/social/google';
 import { Separator } from '~/components/ui/separator';
 
-export async function loader({ request }: LoaderFunctionArgs) {
-  await requireNotLoggedIn(request);
-
+export async function loader() {
   const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = env;
 
   return {
