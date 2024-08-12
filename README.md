@@ -2,6 +2,12 @@
 
 - 📖 [Remix docs](https://remix.run/docs)
 
+To create a new lean stack project, run the following command:
+
+```sh
+npx create-remix@latest --template anthonyhagi/lean-stack
+```
+
 ## Development
 
 Run the dev server:
