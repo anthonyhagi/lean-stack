@@ -1,7 +1,10 @@
 import { redirect } from '@remix-run/node';
 
-import { AUTH_SESSION_KEY, authSessionStorage } from '~/services/auth';
-import { deleteSession } from '~/services/auth';
+import {
+  AUTH_SESSION_KEY,
+  authSessionStorage,
+  deleteSession,
+} from '~/services/auth';
 
 /**
  * Handle logging a user out by ensuring that their session is destroyed
