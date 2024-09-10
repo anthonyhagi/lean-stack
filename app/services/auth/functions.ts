@@ -4,7 +4,7 @@ import * as argon2 from 'argon2';
 import { Session } from '~/schema';
 import { assert } from '~/utils/helpers';
 
-import { getUserRole } from '../roles';
+import { getUserRoles } from '../roles';
 import { getUserWithPassword } from '../user';
 import {
   AUTH_SESSION_KEY,
@@ -160,11 +160,16 @@ export async function requireAdminUser(request: Request) {
     throw redirect('/auth/login');
   }
 
-  const role = assert(await getUserRole({ userId }));
+  const roles = assert(await getUserRoles({ userId }));
+  const hasAdminRole = roles.findIndex((role) => role.slug === 'admin');
 
-  if (role.slug !== 'admin') {
+  // The user is not an admin, make sure they don't go further
+  // than this point.
+  if (hasAdminRole === -1) {
     throw redirect('/');
   }
+
+  return userId;
 }
 
 type NewSessionParams = {

@@ -28,9 +28,6 @@ export const users = sqliteTable(
     firstName: text('first_name').notNull(),
     lastName: text('last_name').notNull(),
     email: text('email').unique().notNull(),
-    roleId: text('role_id')
-      .notNull()
-      .references(() => roles.id),
     active: integer('active', { mode: 'boolean' }).default(false),
   },
   (table) => ({ emailIdx: uniqueIndex('email_idx').on(table.email) })

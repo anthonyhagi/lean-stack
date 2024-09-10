@@ -17,6 +17,11 @@ export const integrations = sqliteTable('integration', {
     .$onUpdateFn(() => new Date().toISOString()),
   name: text('name').notNull(),
   slug: text('slug').notNull(),
+
+  // The type of integration that is being added. Data sources, when enabled,
+  // will be shown to the users. Login sources will not be shown to users
+  // on the integrations page
+  type: text('type', { enum: ['login', 'data', ''] }).default(''),
 });
 
 export type Integration = typeof integrations.$inferSelect;
