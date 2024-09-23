@@ -1,7 +1,7 @@
 import { roles, users } from '~/schema';
 import { db } from '../db';
 import { eq } from 'drizzle-orm';
-import { userRoles } from '~/schema/userRoles';
+import { userRoles } from '~/schema/user-roles';
 import { assert } from '~/utils/helpers';
 
 type GetUserRoleParams = {

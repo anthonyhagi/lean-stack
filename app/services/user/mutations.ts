@@ -1,7 +1,7 @@
 import { users } from '~/schema';
 import { db } from '../db';
 import { getDefaultUserRole } from '../roles';
-import { userRoles } from '~/schema/userRoles';
+import { userRoles } from '~/schema/user-roles';
 
 type CreateUserParams = typeof users.$inferInsert;
 
