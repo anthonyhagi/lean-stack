@@ -109,6 +109,16 @@ const environmentSchema = z
     GOOGLE_CLIENT_SECRET: z.string().optional(),
 
     /**
+     * The Cloudflare Turnstile captcha keys. You should set these
+     * keys and implement the Turnstile component and server
+     * handler to protect all public forms.
+     *
+     * Required.
+     */
+    CLOUDFLARE_TURNSTILE_SITE_KEY: z.string(),
+    CLOUDFLARE_TURNSTILE_SECRET_KEY: z.string(),
+
+    /**
      * The node environment we have set to run in. If we are developing,
      * we ideally want to use the `development` value. In testing, we
      * should use the `test`. In all other environments, we should

@@ -22,6 +22,8 @@ export default defineConfig({
       MAIL_HOST: '127.0.0.1',
       MAIL_PORT: '1025',
       MAIL_SECURE: 'false',
+      CLOUDFLARE_TURNSTILE_SITE_KEY: '',
+      CLOUDFLARE_TURNSTILE_SECRET_KEY: '',
     },
   },
   resolve: {
