@@ -28,7 +28,7 @@
     "@remix-run/serve": "^2.15.0",
     "@types/lodash": "^4.17.13",
     "argon2": "^0.41.1",
-    "class-variance-authority": "^0.7.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "drizzle-orm": "^0.36.4",
