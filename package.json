@@ -25,7 +25,7 @@
     "@react-email/components": "0.0.31",
     "@remix-run/node": "^2.11.0",
     "@remix-run/react": "^2.11.0",
-    "@remix-run/serve": "^2.15.1",
+    "@remix-run/serve": "^2.15.2",
     "@types/lodash": "^4.17.13",
     "argon2": "^0.41.1",
     "class-variance-authority": "^0.7.1",
