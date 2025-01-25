@@ -38,7 +38,7 @@
     "nodemailer": "^6.10.0",
     "react": "^18.3.1",
     "react-dom": "^18.2.0",
-    "remix-auth": "^3.7.0",
+    "remix-auth": "^4.1.0",
     "remix-auth-google": "^2.0.0",
     "remix-themes": "^1.5.1",
     "resend": "^4.1.1",
