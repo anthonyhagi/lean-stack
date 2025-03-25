@@ -14,7 +14,7 @@
     "prettier:format": "prettier -w ."
   },
   "dependencies": {
-    "@aws-sdk/client-ses": "^3.758.0",
+    "@aws-sdk/client-ses": "^3.774.0",
     "@conform-to/react": "^1.1.5",
     "@conform-to/zod": "^1.1.5",
     "@libsql/client": "^0.15.0",
