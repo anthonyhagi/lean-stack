@@ -58,7 +58,7 @@
     "@vitejs/plugin-react": "^4.4.0",
     "autoprefixer": "^10.4.21",
     "drizzle-kit": "^0.31.0",
-    "eslint": "^8.38.0",
+    "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-import-resolver-typescript": "^4.3.2",
     "eslint-plugin-import": "^2.31.0",
