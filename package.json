@@ -24,7 +24,7 @@
     "@radix-ui/react-slot": "^1.2.0",
     "@react-email/components": "0.0.38",
     "@remix-run/node": "^2.11.0",
-    "@remix-run/react": "^2.11.0",
+    "@remix-run/react": "^2.16.7",
     "@remix-run/serve": "^2.16.6",
     "@types/lodash": "^4.17.16",
     "argon2": "^0.43.0",
