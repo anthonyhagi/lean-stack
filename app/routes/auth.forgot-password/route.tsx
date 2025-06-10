@@ -1,7 +1,7 @@
 import { useForm } from '@conform-to/react';
 import { parseWithZod } from '@conform-to/zod';
-import { ActionFunctionArgs, json, LoaderFunctionArgs } from 'react-router';
-import { Form, Link } from 'react-router';
+import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
+import { data, Form, Link } from 'react-router';
 
 import { randomBytes } from 'crypto';
 import { addMinutes } from 'date-fns';
@@ -36,7 +36,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const submission = parseWithZod(formData, { schema });
 
   if (submission.status !== 'success') {
-    return json(submission.reply());
+    return data(submission.reply());
   }
 
   try {
