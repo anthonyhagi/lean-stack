@@ -7,3 +7,22 @@ updates:
       interval: 'daily'
     allow:
       - dependency-type: 'direct'
+    groups:
+      react-router:
+        patterns:
+          - '@react-router/*'
+          - 'react-router'
+          - 'react-router-dom'
+      radix-ui:
+        patterns:
+          - '@radix-ui/*'
+      react:
+        patterns:
+          - react
+          - react-dom
+      conform:
+        patterns:
+          - '@conform-to/*'
+      aws:
+        patterns:
+          - '@aws-sdk/*'
