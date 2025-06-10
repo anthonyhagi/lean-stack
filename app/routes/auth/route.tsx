@@ -1,5 +1,5 @@
-import type { LoaderFunctionArgs } from '@remix-run/node';
-import { Outlet, redirect } from '@remix-run/react';
+import type { LoaderFunctionArgs } from 'react-router';
+import { Outlet, redirect } from 'react-router';
 
 import { requireNotLoggedIn } from '~/services/auth';
 

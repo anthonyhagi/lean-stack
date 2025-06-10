@@ -1,5 +1,5 @@
-import type { LoaderFunctionArgs } from '@remix-run/node';
-import { redirect } from '@remix-run/node';
+import type { LoaderFunctionArgs } from 'react-router';
+import { redirect } from 'react-router';
 import {
   authenticator,
   createConnection,
@@ -19,8 +19,14 @@ export async function loader({ request }: LoaderFunctionArgs) {
       throwOnError: true,
     })
     .then(
-      (data) => ({ success: true, data }) as const,
-      (error) => ({ success: false, error }) as const
+      (data) => (({
+        success: true,
+        data
+      }) as const),
+      (error) => (({
+        success: false,
+        error
+      }) as const)
     );
 
   // Something went wrong, don't do anything more and redirect

@@ -1,4 +1,4 @@
-import type { MetaFunction } from '@remix-run/node';
+import type { MetaFunction } from 'react-router';
 
 import { Heading } from '~/components/ui/heading';
 import { Text } from '~/components/ui/text';

@@ -1,12 +1,5 @@
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useLoaderData,
-} from '@remix-run/react';
-import { LoaderFunctionArgs } from '@remix-run/node';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from 'react-router';
+import { LoaderFunctionArgs } from 'react-router';
 import {
   PreventFlashOnWrongTheme,
   ThemeProvider,

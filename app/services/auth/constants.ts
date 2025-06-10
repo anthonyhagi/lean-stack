@@ -1,4 +1,4 @@
-import { createCookieSessionStorage } from '@remix-run/node';
+import { createCookieSessionStorage } from 'react-router';
 import { Authenticator } from 'remix-auth';
 import { env } from '../app';
 import { googleStrategy } from './strategy/google';
