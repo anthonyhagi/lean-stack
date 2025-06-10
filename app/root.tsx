@@ -1,4 +1,11 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from 'react-router';
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLoaderData,
+} from 'react-router';
 import { LoaderFunctionArgs } from 'react-router';
 import {
   PreventFlashOnWrongTheme,

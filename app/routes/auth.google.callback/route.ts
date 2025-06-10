@@ -19,14 +19,16 @@ export async function loader({ request }: LoaderFunctionArgs) {
       throwOnError: true,
     })
     .then(
-      (data) => (({
-        success: true,
-        data
-      }) as const),
-      (error) => (({
-        success: false,
-        error
-      }) as const)
+      (data) =>
+        ({
+          success: true,
+          data,
+        }) as const,
+      (error) =>
+        ({
+          success: false,
+          error,
+        }) as const
     );
 
   // Something went wrong, don't do anything more and redirect
