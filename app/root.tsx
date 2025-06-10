@@ -6,7 +6,6 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from 'react-router';
-import { LoaderFunctionArgs } from 'react-router';
 import {
   PreventFlashOnWrongTheme,
   ThemeProvider,
@@ -16,9 +15,10 @@ import {
 import { themeSessionResolver } from './services/theme';
 import { cn } from './utils/css';
 
+import type { Route } from './+types/root';
 import './tailwind.css';
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
   const { getTheme } = await themeSessionResolver(request);
 
   return { theme: getTheme() };

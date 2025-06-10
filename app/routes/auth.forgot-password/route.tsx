@@ -1,6 +1,5 @@
 import { useForm } from '@conform-to/react';
 import { parseWithZod } from '@conform-to/zod';
-import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import { data, Form, Link } from 'react-router';
 
 import { randomBytes } from 'crypto';
@@ -27,9 +26,10 @@ import { getUser } from '~/services/user';
 import { cn } from '~/utils/css';
 import { assert } from '~/utils/helpers';
 
+import type { Route } from './+types/route';
 import { schema } from './validation';
 
-export async function action({ request }: ActionFunctionArgs) {
+export async function action({ request }: Route.ActionArgs) {
   await requireNotLoggedIn(request);
 
   const formData = await request.formData();
@@ -86,7 +86,7 @@ export async function action({ request }: ActionFunctionArgs) {
   return null;
 }
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
   await requireNotLoggedIn(request);
 
   return null;

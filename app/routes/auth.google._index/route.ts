@@ -1,5 +1,6 @@
-import { ActionFunctionArgs, redirect } from 'react-router';
+import { redirect } from 'react-router';
 import { authenticator } from '~/services/auth';
+import type { Route } from './+types/route';
 
 /**
  * We don't want to allow users to make a GET request here since it
@@ -8,7 +9,7 @@ import { authenticator } from '~/services/auth';
  * the authentication flow.
  */
 export function loader() {
-  return redirect('/login');
+  throw redirect('/login');
 }
 
 /**
@@ -16,6 +17,6 @@ export function loader() {
  * screen and will request them to allow permissions for the app
  * Once they do, we will handle the rest in the callback route
  */
-export async function action({ request }: ActionFunctionArgs) {
+export async function action({ request }: Route.ActionArgs) {
   return await authenticator.authenticate('google', request);
 }

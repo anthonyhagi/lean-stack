@@ -1,14 +1,13 @@
-import type { MetaFunction } from 'react-router';
-
 import { Heading } from '~/components/ui/heading';
 import { Text } from '~/components/ui/text';
+import type { Route } from './+types/_index';
 
-export const meta: MetaFunction = () => {
+export function meta(): Route.MetaDescriptors {
   return [
     { title: 'New Remix App' },
     { name: 'description', content: 'Welcome to Remix!' },
   ];
-};
+}
 
 export default function Index() {
   return (
