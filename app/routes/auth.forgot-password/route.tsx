@@ -1,7 +1,6 @@
 import { useForm } from '@conform-to/react';
 import { parseWithZod } from '@conform-to/zod';
-import { ActionFunctionArgs, json, LoaderFunctionArgs } from '@remix-run/node';
-import { Form, Link } from '@remix-run/react';
+import { data, Form, Link } from 'react-router';
 
 import { randomBytes } from 'crypto';
 import { addMinutes } from 'date-fns';
@@ -27,16 +26,17 @@ import { getUser } from '~/services/user';
 import { cn } from '~/utils/css';
 import { assert } from '~/utils/helpers';
 
+import type { Route } from './+types/route';
 import { schema } from './validation';
 
-export async function action({ request }: ActionFunctionArgs) {
+export async function action({ request }: Route.ActionArgs) {
   await requireNotLoggedIn(request);
 
   const formData = await request.formData();
   const submission = parseWithZod(formData, { schema });
 
   if (submission.status !== 'success') {
-    return json(submission.reply());
+    return data(submission.reply());
   }
 
   try {
@@ -86,7 +86,7 @@ export async function action({ request }: ActionFunctionArgs) {
   return null;
 }
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
   await requireNotLoggedIn(request);
 
   return null;

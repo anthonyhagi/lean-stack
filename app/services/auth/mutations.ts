@@ -1,9 +1,9 @@
+import { eq } from 'drizzle-orm';
+import { camelCase, kebabCase, startCase } from 'lodash-es';
 import { integrations, sessions, userIntegrations } from '~/schema';
 import { db } from '../db';
-import { eq } from 'drizzle-orm';
 import { getAuthSessionExpirationTime } from './functions';
 import { ProviderName } from './types';
-import _ from 'lodash';
 
 type CreateSessionParams = { userId: string };
 
@@ -68,8 +68,8 @@ export async function findOrCreateIntegration(
 ) {
   const { type } = params;
 
-  const slug = _.kebabCase(provider);
-  const name = _.startCase(_.camelCase(provider));
+  const slug = kebabCase(provider);
+  const name = startCase(camelCase(provider));
 
   // We should only be creating new integrations when we've supported
   // the provider. Ideally we should always be finding the provider

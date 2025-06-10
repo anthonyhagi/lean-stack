@@ -1,5 +1,4 @@
-import type { LoaderFunctionArgs } from '@remix-run/node';
-import { redirect } from '@remix-run/node';
+import { redirect } from 'react-router';
 import {
   authenticator,
   createConnection,
@@ -8,8 +7,9 @@ import {
   getExistingConnection,
 } from '~/services/auth';
 import { createUser, getUser } from '~/services/user';
+import type { Route } from './+types/route';
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
   // Check that the request we received was authenticated properly
   // using `remix-auth`. This ensures that we successfully
   // received the callback from Google rather than
