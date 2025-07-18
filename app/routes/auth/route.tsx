@@ -1,9 +1,9 @@
-import type { LoaderFunctionArgs } from '@remix-run/node';
-import { Outlet, redirect } from '@remix-run/react';
+import { Outlet, redirect } from 'react-router';
 
 import { requireNotLoggedIn } from '~/services/auth';
+import type { Route } from './+types/route';
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
   await requireNotLoggedIn(request);
 
   const url = new URL(request.url);
@@ -12,7 +12,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   // Let's redirect them to the login page since they'll
   // be able to see and do something there.
   if (['/auth/', '/auth'].includes(url.pathname)) {
-    return redirect('/auth/login');
+    throw redirect('/auth/login');
   }
 
   return null;

@@ -1,4 +1,4 @@
-import { redirect } from '@remix-run/node';
+import { redirect } from 'react-router';
 import * as argon2 from 'argon2';
 
 import { Session } from '~/schema';

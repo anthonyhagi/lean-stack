@@ -1,6 +1,6 @@
-import type { ActionFunctionArgs } from '@remix-run/node';
-import { redirect } from '@remix-run/node';
+import { redirect } from 'react-router';
 
+import type { Route } from './+types/route';
 import { logout } from './actions.server';
 
 /**
@@ -16,6 +16,6 @@ export function loader() {
  * Handle running the log out steps to ensure a users' session
  * is completely logged out and cannot be accessed again.
  */
-export async function action({ request }: ActionFunctionArgs) {
+export async function action({ request }: Route.ActionArgs) {
   return logout(request);
 }

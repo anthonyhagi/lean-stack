@@ -1,4 +1,4 @@
-import { createCookieSessionStorage } from '@remix-run/node';
+import { createCookieSessionStorage } from 'react-router';
 import { Authenticator } from 'remix-auth';
 import { env } from '../app';
 import { googleStrategy } from './strategy/google';
@@ -67,9 +67,7 @@ export const connectionSessionStorage = createCookieSessionStorage({
   },
 });
 
-export const authenticator = new Authenticator<ProviderUser>(
-  connectionSessionStorage
-);
+export const authenticator = new Authenticator<ProviderUser>();
 
 // Add all strategies that should be used here. Ideally we only want
 // to limit this to social/provider strategies such as Google and
