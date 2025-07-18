@@ -14,14 +14,10 @@ export async function loader({ request }: Route.LoaderArgs) {
   // using `remix-auth`. This ensures that we successfully
   // received the callback from Google rather than
   // another source.
-  const authResult = await authenticator
-    .authenticate('google', request, {
-      throwOnError: true,
-    })
-    .then(
-      (data) => ({ success: true, data }) as const,
-      (error) => ({ success: false, error }) as const
-    );
+  const authResult = await authenticator.authenticate('google', request).then(
+    (data) => ({ success: true, data }) as const,
+    (error) => ({ success: false, error }) as const
+  );
 
   // Something went wrong, don't do anything more and redirect
   // the user back to the login page.
