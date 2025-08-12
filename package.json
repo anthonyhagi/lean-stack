@@ -26,7 +26,7 @@
     "@react-router/node": "^7.8.0",
     "@react-router/serve": "^7.8.0",
     "@types/lodash": "^4.17.20",
-    "argon2": "^0.43.1",
+    "argon2": "^0.44.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
