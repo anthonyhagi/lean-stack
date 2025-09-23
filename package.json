@@ -22,7 +22,7 @@
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
-    "@react-email/components": "0.5.3",
+    "@react-email/components": "0.5.4",
     "@react-router/node": "^7.8.2",
     "@react-router/serve": "^7.8.2",
     "@types/lodash": "^4.17.20",
