@@ -25,7 +25,7 @@
     "@react-email/components": "0.5.7",
     "@react-router/node": "^7.8.2",
     "@react-router/serve": "^7.8.2",
-    "@types/lodash": "^4.17.20",
+    "@types/lodash": "^4.17.21",
     "argon2": "^0.44.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
