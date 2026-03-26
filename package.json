@@ -33,7 +33,7 @@
     "drizzle-orm": "^0.44.7",
     "isbot": "^5.1.36",
     "lodash-es": "^4.17.23",
-    "lucide-react": "^0.577.0",
+    "lucide-react": "^1.7.0",
     "nodemailer": "^8.0.4",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
