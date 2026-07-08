@@ -41,7 +41,7 @@
     "remix-auth": "^4.2.0",
     "remix-auth-oauth2": "^3.4.1",
     "remix-themes": "^2.0.4",
-    "resend": "^6.12.4",
+    "resend": "^6.17.2",
     "tailwind-merge": "^3.6.0",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^14.0.0",
